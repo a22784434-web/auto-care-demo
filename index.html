@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d14">
+  <meta name="description" content="Концепт сайту автомийки — сучасна автомийка. Послуги, переваги та контакти.">
+  <title>автомийки — чистота без компромісів</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#080d14;--panel:#101925;--panel2:#142131;--text:#f4f7fb;--muted:#9aa9ba;--blue:#39a9ff;--cyan:#71dcff;--line:rgba(255,255,255,.1);--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .topnote{background:#0d1926;border-bottom:1px solid var(--line);color:#b9c9d9;text-align:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:9px 14px}
+    header{position:sticky;top:0;z-index:10;background:rgba(8,13,20,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em}.logo{width:39px;height:39px;border:1px solid rgba(57,169,255,.55);border-radius:12px;display:grid;place-items:center;color:var(--cyan);font-size:18px;box-shadow:0 0 24px rgba(57,169,255,.13)}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.22em;font-weight:600;margin-top:-3px}
+    .links{display:flex;align-items:center;gap:30px;color:#c1ccda;font-size:13px}.links a:hover{color:var(--cyan)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:10px;background:linear-gradient(120deg,#1687e8,#36b8ef);color:#04101b;font-weight:800;font-size:13px;box-shadow:0 9px 28px rgba(31,151,230,.2);transition:.2s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:9px;padding:8px 11px}
+    .hero{position:relative;min-height:650px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,rgba(5,10,17,.96) 0%,rgba(5,10,17,.8) 43%,rgba(5,10,17,.18) 100%),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=90') center/cover}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,var(--bg));pointer-events:none}.hero-content{position:relative;z-index:1;max-width:650px;padding:100px 0}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}.eyebrow:before{content:"";width:27px;height:1px;background:var(--blue)}h1{font-size:clamp(44px,7vw,82px);line-height:1.03;letter-spacing:-.055em;margin:22px 0}h1 span{color:var(--cyan)}.lead{max-width:520px;color:#c0cbd7;font-size:16px;margin:0 0 32px}.hero-actions{display:flex;gap:13px;flex-wrap:wrap}.btn.secondary{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:white;box-shadow:none}.hero-meta{display:flex;gap:32px;margin-top:58px;color:#b3c1cf;font-size:12px}.hero-meta strong{display:block;color:white;font-size:17px}
+    section{padding:96px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:38px}.kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}.section-head h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.045em;line-height:1.1;margin:12px 0 0}.section-head p{max-width:390px;color:var(--muted);font-size:13px;margin:0}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.service{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:17px;padding:27px;min-height:220px;transition:.25s}.service:hover{transform:translateY(-5px);border-color:rgba(57,169,255,.45)}.service-icon{width:44px;height:44px;border-radius:13px;background:rgba(57,169,255,.12);display:grid;place-items:center;color:var(--cyan);font-size:21px;margin-bottom:24px}.service h3{font-size:18px;margin:0 0 8px}.service p{font-size:13px;color:var(--muted);margin:0}.price{display:block;margin-top:18px;color:var(--cyan);font-size:12px;font-weight:800}
+    .feature{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.feature-photo{min-height:420px;border-radius:20px;background:linear-gradient(0deg,rgba(8,13,20,.1),rgba(8,13,20,.1)),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=90') center/cover;position:relative;overflow:hidden}.photo-tag{position:absolute;bottom:20px;left:20px;background:rgba(8,13,20,.82);border:1px solid var(--line);padding:12px 16px;border-radius:10px;font-size:12px}.feature-copy h2{font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.04em;margin:13px 0 18px}.feature-copy>p{color:var(--muted);font-size:14px}.checks{display:grid;gap:14px;margin:27px 0}.check{display:flex;gap:12px;align-items:center;font-size:13px;color:#d5deea}.check i{font-style:normal;color:var(--cyan);font-size:17px}
+    .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:190px 190px;gap:14px}.gallery div{border-radius:15px;overflow:hidden;background-position:center;background-size:cover;position:relative}.gallery div:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.6))}.gallery .g1{grid-row:span 2;background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85')}.gallery .g2{background-image:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=85')}.gallery .g3{background-image:url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=90')}.gallery .g4{background-image:url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=85')}.gallery .g5{background-image:url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=85')}
+    .cta-band{padding:0 0 96px}.cta-inner{border:1px solid rgba(57,169,255,.25);border-radius:22px;padding:48px;background:radial-gradient(ellipse at 90% 0%,rgba(34,150,230,.2),transparent 48%),linear-gradient(120deg,#101d2b,#0c1420);display:flex;justify-content:space-between;align-items:center;gap:25px}.cta-inner h2{font-size:clamp(27px,4vw,42px);line-height:1.1;letter-spacing:-.04em;margin:10px 0}.cta-inner p{color:var(--muted);font-size:13px;margin:0}
+    footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;align-items:center;gap:20px}.foot strong{color:white;letter-spacing:.08em}
+
+    /* Motion */
+    @keyframes heroIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes softGlow{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:.55;transform:scale(1.08)}}
+    .hero-content{animation:heroIn .9s cubic-bezier(.2,.7,.2,1) both}
+    .hero:before{content:"";position:absolute;width:420px;height:420px;right:8%;top:12%;border-radius:50%;background:rgba(40,157,235,.16);filter:blur(90px);animation:softGlow(7s ease-in-out infinite);pointer-events:none}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .service:nth-child(2){transition-delay:.1s}.service:nth-child(3){transition-delay:.2s}
+    .gallery div{transition:transform .55s ease,filter .55s ease}
+    .gallery div:hover{transform:scale(1.025);filter:brightness(1.13)}
+    .btn span{display:inline-block;transition:transform .2s ease}.btn:hover span{transform:translate(3px,-3px)}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+    @media(max-width:800px){.links{display:none;position:absolute;top:78px;left:0;right:0;background:#0b121c;padding:22px 24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero{min-height:620px;background-position:58% center}.hero-content{padding:75px 0}.hero-meta{gap:20px}.services{grid-template-columns:repeat(2,1fr)}.feature{grid-template-columns:1fr;gap:30px}.feature-photo{min-height:340px}.section-head{display:block}.section-head p{margin-top:15px}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:190px 150px 150px}.gallery .g1{grid-row:span 2}.gallery .g5{display:none}.cta-inner{padding:32px;display:block}.cta-inner .btn{margin-top:22px}}
+    @media(max-width:520px){.wrap{width:min(var(--max),calc(100% - 30px))}.nav{height:68px}.links{top:68px}.hero{min-height:600px}.hero-content{padding:65px 0}.lead{font-size:14px}.hero-meta{margin-top:42px;gap:15px}.hero-meta strong{font-size:15px}.hero-meta span{font-size:10px}section{padding:70px 0}.services{grid-template-columns:1fr}.service{min-height:185px}.gallery{grid-template-rows:150px 130px 130px;gap:9px}.feature-photo{min-height:270px}.cta-band{padding-bottom:70px}.foot{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topnote">Демонстраційний концепт сайту автомийки · Портфоліо WFX Studio</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home"><span class="logo">A</span><span>AUTO CARE<small>CAR WASH CONCEPT</small></span></a>
+      <nav class="links" id="navlinks"><a href="#services">Послуги</a><a href="#about">Переваги</a><a href="#gallery">Галерея</a><a href="#contacts">Контакти</a></nav>
+      <a class="nav-cta" href="#contacts">Зв'язатися <span>↗</span></a>
+      <button class="menu" id="menu" aria-label="Відкрити меню">☰</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap"><div class="hero-content">
+        <div class="eyebrow">Догляд, який помітно</div>
+        <h1>Чистота<br><span>без компромісів.</span></h1>
+        <p class="lead">Концепція сучасного простору для догляду за автомобілем. Зручний формат, увага до деталей і результат, який хочеться бачити щодня.</p>
+        <div class="hero-actions"><a class="btn" href="#services">Переглянути послуги <span>↘</span></a><a class="btn secondary" href="#contacts">Контакти</a></div>
+        <div class="hero-meta"><div><strong>24/7*</strong><span>Формат роботи</span></div><div><strong>Care</strong><span>Увага до деталей</span></div><div><strong>Clean</strong><span>Чистий результат</span></div></div>
+      </div></div>
+    </section>
+    <section id="services" class="reveal">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Що ми пропонуємо</div><h2>Догляд для кожної<br>деталі авто.</h2></div><p>Нижче — демонстраційні категорії. Остаточний перелік послуг і вартість потрібно підтвердити з представником автомийки.</p></div>
+        <div class="services">
+          <article class="service"><div class="service-icon">✦</div><h3>Мийка кузова</h3><p>Дбайливе очищення зовнішніх поверхонь автомобіля.</p><span class="price">Вартість уточнюється</span></article>
+          <article class="service"><div class="service-icon">◈</div><h3>Очищення салону</h3><p>Порядок і свіжість у просторі, де ви проводите час.</p><span class="price">Вартість уточнюється</span></article>
+          <article class="service"><div class="service-icon">✧</div><h3>Догляд за деталями</h3><p>Додаткова увага до скла, дисків та інших елементів.</p><span class="price">Вартість уточнюється</span></article>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="reveal">
+      <div class="wrap feature">
+        <div class="feature-photo"><div class="photo-tag">AUTO CARE · CAR CARE</div></div>
+        <div class="feature-copy"><div class="kicker">Чому це зручно</div><h2>Ваш автомобіль заслуговує на увагу.</h2><p>Ми прагнемо зробити догляд за автомобілем простим і зрозумілим. У цьому макеті зібрані ключові блоки, які допомагають відвідувачу швидко зорієнтуватися.</p>
+          <div class="checks"><div class="check"><i>✓</i> Зрозуміла структура послуг</div><div class="check"><i>✓</i> Зручний перегляд зі смартфона</div><div class="check"><i>✓</i> Швидкий перехід до контактів</div></div>
+          <a class="btn secondary" href="#contacts">Знайти контакти <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+    <section id="gallery" class="reveal">
+      <div class="wrap"><div class="section-head"><div><div class="kicker">Атмосфера</div><h2>Авто в центрі уваги.</h2></div><p>Демонстраційні зображення для презентації стилю. Для фінальної версії варто використати власні фото автомийки.</p></div>
+        <div class="gallery"><div class="g1"></div><div class="g2"></div><div class="g3"></div><div class="g4"></div><div class="g5"></div></div>
+      </div>
+    </section>
+    <div class="cta-band reveal" id="contacts"><div class="wrap"><div class="cta-inner"><div><div class="kicker">Зв'язок</div><h2>Є запитання? Ми на зв'язку.</h2><p>Напишіть в Зв'яжіться з нами, щоб уточнити деталі та актуальну інформацію.</p></div><a class="btn" href="#home">Instagram автомийки <span>↗</span></a></div></div></div>
+  </main>
+  <footer><div class="wrap foot"><div><strong>AUTO CARE</strong><div>Демонстраційний проєкт від WFX Studio</div></div><div>© <span id="year"></span> · Концепт WFX Studio · Демонстраційний макет</div></div></footer>
+  <script>
+    const menu=document.getElementById('menu'),links=document.getElementById('navlinks');
+    menu.addEventListener('click',()=>links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
